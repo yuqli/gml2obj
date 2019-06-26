@@ -1,3 +1,11 @@
+# @Author: Yuqiong Li <yuqiongli>
+# @Date:   26-Jun-2019
+# @Email:  greenstone1564@gmail.com
+# @Last modified by:   yuqiongli
+# @Last modified time: 26-Jun-2019
+
+
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
@@ -5,7 +13,7 @@
 
 # This code is part of the CityGML2OBJs package
 
-# Copyright (c) 2014 
+# Copyright (c) 2014
 # Filip Biljecki
 # Delft University of Technology
 # fbiljecki@gmail.com
@@ -115,10 +123,10 @@ def isPolyPlanar(polypoints):
     eps = 0.01
     #-- Assumes planarity
     planar = True
-    for i in range (3, npolypoints):
-        vector = [polypoints[i][0] - polypoints[0][0], polypoints[i][1] - polypoints[0][1], polypoints[i][2] - polypoints[0][2]]
-        if math.fabs(dot(vector, normal)) > eps:
-            planar = False
+    # for i in range (3, npolypoints):
+    #     vector = [polypoints[i][0] - polypoints[0][0], polypoints[i][1] - polypoints[0][1], polypoints[i][2] - polypoints[0][2]]
+    #     if math.fabs(dot(vector, normal)) > eps:
+    #         planar = False
     return planar
 
 def isPolySimple(polypoints):
@@ -465,7 +473,7 @@ def triangulation(e, i):
     c = e[2]
     #-- Construct the plane
     pl = plane(a, b, c)
- 
+
     #-- Prepare the polygon to be triangulated
     poly = {'vertices' : np.array(newpolypoints), 'segments' : np.array(segments), 'holes' : np.array(newholes)}
     # print poly
@@ -485,7 +493,7 @@ def triangulation(e, i):
                 vert_adj[1] = vert[v][0]
                 vert_adj[2] = vert[v][1]
             elif vertical:
-                vert_adj[0] = vert[v][0]            
+                vert_adj[0] = vert[v][0]
                 vert_adj[2] = vert[v][1]
                 vert_adj[1] = get_y(pl, vert_adj[0], vert_adj[2])
             else:
