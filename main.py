@@ -80,6 +80,8 @@ def vertices_demean(vertices_list):
     """
     d = np.array(vertices_list)
     mu = np.mean(d, axis=0)
+
+    mu[2] = 0
     v = (d - mu).tolist()
     return mu[:2].tolist(), v
 
