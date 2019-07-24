@@ -204,8 +204,8 @@ def write_tri_obj(out_path, header, mu_line, v, f):
     @ param f: faces
     """
     with open(out_path, "w+") as obj_file:
-        obj_file.write(header[0])
-        obj_file.write(header[1])
+        #obj_file.write(header[0])
+        #obj_file.write(header[1])
         obj_file.write(mu_line)
         for point in v:
             line = "v {0} {1} {2}\n".format(point[0], point[1], point[2])

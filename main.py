@@ -122,8 +122,10 @@ def write_obj(out_path, header, mu, s, v, f):
     with open(out_path, "w") as obj_file:
         obj_file.write(header)
         obj_file.write("# mean {0} {1}\n".format(mu[0], mu[1]))
+        obj_file.write("#")
         for semantic in s:
-            obj_file.write("# %s\n" % semantic)
+            obj_file.write(" %s" % semantic)
+        obj_file.write("\n")
         for point in v:
             line = "v {0} {1} {2}\n".format(point[0], point[1], point[2])
             obj_file.write(line)
